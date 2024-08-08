@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MyWrotes</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <string name="Login" />
+    <string name="neue_notiz">Neue Notiz</string>
+    <string name="new_note_done">Neue Notiz fertig</string>
+    <string name="btn_for_menu" />
+</resources>

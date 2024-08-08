@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90866204727",
+    "project_id": "mywrotes-d6e9b",
+    "storage_bucket": "mywrotes-d6e9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90866204727:android:e190ebb4ff8196fa95ffb2",
+        "android_client_info": {
+          "package_name": "com.example.mywrotes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADV6iuRStOER7DAcUQG5lwUFJQyoqaXKg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
