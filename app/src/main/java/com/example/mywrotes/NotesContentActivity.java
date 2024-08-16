@@ -21,6 +21,7 @@ public class NotesContentActivity extends AppCompatActivity {
     TextView SiteTitleTextView;
     String title, content, NoteID;
     TextView deleteNoteBtn;
+    ImageButton iconDeleteBtn;
     boolean isEditMode = false;
 
 
@@ -35,6 +36,7 @@ public class NotesContentActivity extends AppCompatActivity {
         saveNoteBtn = findViewById(R.id.new_note_done);
         SiteTitleTextView = findViewById(R.id.site_title);
         deleteNoteBtn = findViewById(R.id.delete_note_text_view_btn);
+        iconDeleteBtn = findViewById(R.id.delete_button);
 
         title = getIntent().getStringExtra("title");
         content = getIntent().getStringExtra("content");
@@ -50,12 +52,14 @@ public class NotesContentActivity extends AppCompatActivity {
         if (isEditMode){
             SiteTitleTextView.setText("Wrote bearbeiten");
             deleteNoteBtn.setVisibility(View.VISIBLE);
+            iconDeleteBtn.setVisibility(View.VISIBLE);
         }
 
 
         saveNoteBtn.setOnClickListener( (v)-> saveNote());
 
         deleteNoteBtn.setOnClickListener((v)-> deleteNoteFromFB());
+        iconDeleteBtn.setOnClickListener((v)-> deleteNoteFromFB());
     }
 
     void saveNote() {

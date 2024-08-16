@@ -6,4 +6,5 @@
     <string name="neue_notiz">Neue Notiz</string>
     <string name="new_note_done">Neue Notiz fertig</string>
     <string name="btn_for_menu" />
+    <string name="addbtn">addbtn</string>
 </resources>

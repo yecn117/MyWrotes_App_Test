@@ -39,6 +39,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     implementation 'com.google.firebase:firebase-auth:22.1.1'
     implementation 'com.google.firebase:firebase-firestore:25.0.0'
+    implementation 'com.codesgood:justifiedtextview:1.1.0'
     implementation libs.firebase.ui.firestore
     implementation libs.foundation.android
     testImplementation 'junit:junit:4.13.2'

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/my_primary"
+    android:background="@color/light_blue"
     android:padding="16dp"
     tools:context=".NotesContentActivity">
 
@@ -19,7 +19,7 @@
             android:id="@+id/site_title"
             android:text="Wrote erstellen"
             android:textSize="40sp"
-            android:textColor="@color/white"
+            android:textColor="@color/main_color"
             android:textStyle="bold"/>
 
         <ImageButton
@@ -50,6 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/layout_title"
+        android:id="@+id/notes_layout"
         android:orientation="vertical"
         android:padding="16dp"
         android:layout_marginVertical="26dp"
@@ -81,16 +82,37 @@
 
     </LinearLayout>
 
-    <TextView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/delete_note_text_view_btn"
-        android:text="Löschen"
-        android:layout_alignParentBottom="true"
-        android:gravity="center"
-        android:textColor="@color/red"
-        android:textSize="25sp"
-        android:visibility="gone"
-        />
+        android:orientation="horizontal"
+        android:layout_below="@id/notes_layout"
+        android:layout_marginTop="-26dp"
+        android:gravity="center">
+
+        <ImageButton
+            android:id="@+id/delete_button"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="delete note"
+            android:src="@drawable/delete_icon"
+            app:tint="@color/red"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/delete_note_text_view_btn"
+            android:text="Löschen"
+            android:gravity="center_vertical"
+            android:textColor="@color/red"
+            android:textSize="25sp"
+            android:layout_marginStart="-10dp"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
 
 </RelativeLayout>

@@ -15,7 +15,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.Query;
 
-
 public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton addNoteBtn;
@@ -29,25 +28,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         addNoteBtn = findViewById(R.id.add_notes_btn);
-        listView =findViewById(R.id.list_view);
+        listView = findViewById(R.id.list_view);
         menuBtn = findViewById(R.id.menu_btn);
 
         addNoteBtn.setOnClickListener((view -> startActivity(new Intent(MainActivity.this, NotesContentActivity.class))));
-        menuBtn.setOnClickListener((v)-> showMenu());
+        menuBtn.setOnClickListener((v) -> showMenu());
         setupListView();
     }
 
-    void showMenu(){
+    void showMenu() {
         PopupMenu popupMenu = new PopupMenu(MainActivity.this, menuBtn);
         popupMenu.getMenu().add("Ausloggen");
+        popupMenu.getMenu().add("About MyWrotes");
         popupMenu.show();
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
-                if (menuItem.getTitle()=="Ausloggen"){
+                if (menuItem.getTitle().equals("Ausloggen")) {
                     FirebaseAuth.getInstance().signOut();
-                    startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
                     finish();
+                    return true;
+                } else if (menuItem.getTitle().equals("About MyWrotes")) {
+
+                    startActivity(new Intent(MainActivity.this, AboutMyWrotesActivity.class));
                     return true;
                 }
                 return false;
@@ -55,11 +59,12 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void setupListView(){
+    void setupListView() {
 
         Query query = tool.getCollectionReferenceForNotes().orderBy("timestamp", Query.Direction.DESCENDING);
         FirestoreRecyclerOptions<Note> options = new FirestoreRecyclerOptions.Builder<Note>()
-                .setQuery(query,Note.class).build();
+                .setQuery(query, Note.class).build();
+
         listView.setLayoutManager(new LinearLayoutManager(this));
         noteAdapter = new NoteAdapter(options, this);
         listView.setAdapter(noteAdapter);

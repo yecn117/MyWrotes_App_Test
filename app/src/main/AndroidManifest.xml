@@ -22,6 +22,9 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
+            android:name=".AboutMyWrotesActivity"
+            android:exported="false" />
+        <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>

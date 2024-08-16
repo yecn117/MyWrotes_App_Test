@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         finish();
                     }else{
-                        tool.showToast(LoginActivity.this,"Email nicht verifiziert, Bitter bestätige deine email.");
+                        tool.showToast(LoginActivity.this,"Email nicht verifiziert, Bitte bestätige deine Email.");
                     }
 
                 }else{
@@ -95,11 +95,11 @@ public class LoginActivity extends AppCompatActivity {
         //validate the data that are input by user.
 
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            emailEditText.setError("Email is invalid");
+            emailEditText.setError("Email angeben");
             return false;
         }
         if(password.length()<6){
-            passwordEditText.setError("Password length is invalid");
+            passwordEditText.setError("Passwortlänge ungültig");
             return false;
         }
         return true;
