@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_color"
+    android:padding="16dp"
+    tools:context=".AboutMyWrotesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_title">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/site_title"
+            android:text="About MyWrotes"
+            android:textSize="40sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_alignParentStart="true"/>
+
+        <ImageButton
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:id="@+id/menu_btn"
+            android:contentDescription="menubtn"
+            android:src="@drawable/baseline_menu_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            app:tint="@color/light_blue"
+            android:scaleType="fitCenter"/>
+
+    </RelativeLayout>
+
+    <com.codesgood.views.JustifiedTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/about_us_text_view"
+        android:text="Dein persönlicher Begleiter für kreative Gedanken und effiziente Organisation. Mit MyWrotes kannst du deine Notizen spielend leicht erfassen, verwalten und bearbeiten – alles an einem Ort. Ob Ideen, To-Do-Listen oder wichtige Erinnerungen, MyWrotes hilft dir, deinen Alltag zu strukturieren und deine Kreativität zu entfalten. Dank der intuitiven Benutzeroberfläche und praktischen Funktionen wie dem Bild-Upload bleibst du stets gut organisiert. Starte noch heute und erlebe, wie einfach und effektiv Notizmanagement sein kann!"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_below="@id/layout_title"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        />
+
+</RelativeLayout>
